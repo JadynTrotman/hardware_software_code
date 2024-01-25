@@ -1,9 +1,13 @@
 def get_smallest(smallest, value):
     if smallest is None:
+        largest = "because no number set"
         smallest = value
-    elif value < smallest:
+    elif int(value) < int(smallest):
+        largest = smallest
         smallest = value
-    return smallest
+    else:
+        largest = value
+    return (largest, smallest)
 
 def main():
     smallest = None
@@ -11,8 +15,9 @@ def main():
         num = input("Enter a number:") .lower()
         if num == "done":
             break
-        smallest = get_smallest(smallest, num)
-        print("smallest number is:", smallest)
+        largest, smallest = get_smallest(smallest, num)
+        print(smallest, "is smaller", largest)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     main()
