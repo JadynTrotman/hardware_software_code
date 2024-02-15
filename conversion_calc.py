@@ -1,8 +1,9 @@
-def intro_msg():
+def intro_msg(): #opening statement of code
     print("Hello")
-    print("This program converts decimal numbers to binary")
-    print("This program also converts binary numbers to decimal")
-    print("To exit program enter the number 3")
+    print("This program converts decimal numbers to binary and binary numbers to decimal")
+    print("Option 1 is Binary to decimal and option 2 is Decimal to binary")
+    print("The program will then perform a calculation of either option then return to option select")
+    print("To exit program enter the number 3 in option select")
     return input("To start a calculation select option 1 or 2")
 
 def display_calc(): # used to display a menu
@@ -14,7 +15,7 @@ def display_calc(): # used to display a menu
     return calc_dict
 
 
-def calc_options():
+def calc_options(): #codes options
     calc_dict = int(input("Enter your option: "))
     while calc_dict != 0:
         if calc_dict == 1:
@@ -53,7 +54,7 @@ def check_int_bin():
             print("Invalid, not a Binary number")
         else:
             print("Binary {} to Decimal: {}".format(num, binary_to_decimal(num)))
-            continue
+            return calc_options()
 
 def decimal_to_binary(number):
     number = (int(number))
@@ -69,10 +70,11 @@ def check_int_dec():
         try:
              num = int(input("Enter Decimal Number:"))
         except ValueError:
-            print("Invalid, not a decimal number")
+            print("Invalid, not a Decimal number")
         else:
             print("Decimal {} to Binary: {}".format(num, decimal_to_binary(num)))
-            continue
+            return calc_options()
+
 
 def main():
     word = intro_msg()
