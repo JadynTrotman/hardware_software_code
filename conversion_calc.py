@@ -80,7 +80,7 @@ def main():
     word = intro_msg()
     word = display_calc()
     word = calc_options()
-    print('Thank you for using this program \n()'.format())
+    print('Thank you for using this program \n'.format())
 
 if __name__ == '__main__':
     main()
